@@ -1,0 +1,58 @@
+<div class="min-h-screen bg-gray-100 p-8">
+
+    <!-- Encabezado Botón -->
+    <div class="text-center text-5xl font-extrabold text-gray-800 mb-6 mt-10 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+      Buttons
+    </div>
+
+    <hr>
+    
+    <div class="bg-white shadow-lg p-6 w-full max-w-md  mx-auto rounded-t-lg mt-6">
+      <div class="flex justify-between">
+    
+        <!-- Botón -->
+        <div class="flex items-center p-4 max-w-3xl mx-auto">
+          <eds-button [color]="buttonColor" [disabled]="isDisabled">Presioname</eds-button>
+        </div>
+
+        <!-- Opciones -->
+        <div class="m bg-gray-100 p-8">
+          <!-- Estados -->
+          <div>
+            <p class="font-semibold">State</p>
+            <label class="inline-flex items-center text-green-600">
+              <input type="radio" name="state" (change)="setDisabled(false)" [checked]="!isDisabled" class="form-radio text-green-500">
+              <span class="ml-2">Enable</span>
+            </label>
+            <label class="inline-flex items-center text-green-600 ml-4">
+              <input type="radio" name="state" (change)="setDisabled(true)" [checked]="isDisabled" class="form-radio text-green-500">
+              <span class="ml-2">Disable</span>
+            </label>
+          </div>
+    
+          <!-- Colores -->
+          <div>
+            <p class="font-semibold">Color</p>
+            <select id="color-select" (change)="setColor($event)" class="form-select mt-1 block w-full border border-gray-300 rounded-lg">
+              <option value="neutral"   class="text-gray-500 font-bold">Neutral</option>
+              <option value="primary"   class="text-blue-500 font-bold">Primary</option>
+              <option value="secondary" class="text-purple-500 font-bold">Secondary</option>
+              <option value="success"   class="text-green-500 font-bold">Success</option>
+              <option value="warning"   class="text-yellow-500 font-bold">Warning</option>
+              <option value="danger"    class="text-red-500 font-bold">Danger</option>
+            </select>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    
+    <!-- Fragmento de código HTML -->
+    <div class="bg-gray-900 text-white rounded-b-lg p-4 max-w-3xl mx-auto">
+      <pre class="text-center mt-6">
+        <code class="text-green-500">{{ buttonCodeSnippet }}</code>
+      </pre>
+    </div>
+    
+</div>
+    

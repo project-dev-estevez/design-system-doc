@@ -1,16 +1,26 @@
 <div class="flex w-full h-full">
-    
-    <!-- <app-sidebar></app-sidebar> -->
-  
-    <div class="w-full">
-  
-      <!-- <app-header></app-header> -->
-  
-      <div class="p-1 w-full bg-gray-100">      
-        <!-- <app-breadcrumb></app-breadcrumb>       -->
-        <router-outlet></router-outlet>
-      </div>
-  
+  <!-- Sidebar -->
+  <div class="w-64 bg-gray-700 text-white h-full">
+    <div class="p-4 text-center">
+      <div class="text-2xl font-bold">Design System</div>
+      <small>Version 1.0</small>
     </div>
-  
+    <ul class="space-y-2 space-x-2">
+      <li *ngFor="let item of menuItems">
+        <div [routerLink]="item.link" class="block p-2 hover:bg-gray-600 border-l-4" [ngClass]="item.borderColor">{{ item.title }}</div>
+        <ul class="pl-4 space-y-2" *ngIf="item.subItems">
+          <li *ngFor="let subItem of item.subItems">
+            <a [routerLink]="subItem.link" class="block p-2 hover:bg-gray-600">{{ subItem.title }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
+
+  <!-- Main Content -->
+  <div class="flex-1">
+    <div class="p-1 w-full bg-gray-100">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

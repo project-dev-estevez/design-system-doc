@@ -7,6 +7,7 @@ import { DesignSystemLayoutComponent } from './layouts/design-system-layout/desi
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { RouterModule } from '@angular/router';
 import { EstevezDsModule } from './estevez-ds/estevez-ds.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { EstevezDsModule } from './estevez-ds/estevez-ds.module';
     Error404PageComponent
   ],
   imports: [
+    CommonModule,
     RouterModule,
     MaterialModule,
     ReactiveFormsModule,
